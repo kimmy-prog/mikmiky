@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sulop National High School - Senior High School</title>
+
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* IMAGE BACKGROUND */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://scontent-mnl3-2.xx.fbcdn.net/v/t39.30808-6/452530961_3723649864549455_7103018271582029069_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeER_nGDKG3z3hnPaHe1Q_c1qu0r7fgAyjSq7Svt-ADKNHcyAYATrb1aE5YbdMazP8roeEhv5A3_o85nVtRYN8l3&_nc_ohc=PU1QOKJx7yEQ7kNvwFEVGqu&_nc_oc=Adnop04DQUHIie5RPvLeyxkmmHvTG3IkUhM3hTabarEXSX6WhTk-S4m0vgAHb4mkyNc&_nc_zt=23&_nc_ht=scontent-mnl3-2.xx&_nc_gid=xg70q7TRqPV_ZhU4CBLVDw&oh=00_AfoeoLd4GbXLKfiHZcrwQ-jPUEeTUnX93pXHfghSbGn25g&oe=697145CA");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -2;
+}
+
+/* DARK OVERLAY (so text is readable) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+/* CONTENT */
+.container {
+    background: rgba(255, 255, 255, 0.92);
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+
+/* HEADER */
+header {
+    background: #003366;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 80px;
+    margin-right: 15px;
+}
+
+h2 {
+    color: #003366;
+}
+
+/* FORM */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #003366;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- REAL IMAGE BACKGROUND -->
+<div class="background"></div>
+<div class="overlay"></div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<header>
+    <img src="https://scontent-mnl3-3.xx.fbcdn.net/v/t39.30808-6/510314865_122173899626343617_6019614232007399401_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG32eYA1MVIONmUsZ-fNWrGwX770DJy7JXBfvvQMnLslUPqA-0dTedPS_mv2N9IN_4S0jwZETuGAH_rFDuapg64&_nc_ohc=0kypZDRvAY8Q7kNvwGYZMgB&_nc_oc=Adn7mL5EzAS1ByfVlSVQ3iPPZIOya8wm8DcmVAg354n7jpLG5pIdDGtGzryAOSUwRy0&_nc_zt=23&_nc_ht=scontent-mnl3-3.xx&_nc_gid=ifThkVxIEkCx7_4PTcOiWg&oh=00_Afqx00phSmzIk8qfxErRNh7ArwV9bu6WHhHIlI-JAKAwaA&oe=6971309E">
+    <h1>Sulop National High School – Senior High School</h1>
+</header>
+
+<h2>About the School</h2>
+<p>
+Sulop National High School – Senior High School is dedicated to providing
+quality education and preparing learners for college, employment, and leadership.
+</p>
+
+<h2>Senior High School Strands</h2>
+<ul>
+    <li>STEM</li>
+    <li>ABM</li>
+    <li>HUMSS</li>
+    <li>GAS</li>
+    <li>TVL</li>
+</ul>
+
+<h2>Enrollment / Registration Form</h2>
+<form onsubmit="submitForm(); return false;">
+    <input type="text" placeholder="Full Name" required>
+    <input type="number" placeholder="Age" required>
+    <input type="text" placeholder="Address" required>
+
+    <select required>
+        <option value="">Select Strand</option>
+        <option>STEM</option>
+        <option>ABM</option>
+        <option>HUMSS</option>
+        <option>GAS</option>
+        <option>TVL</option>
+    </select>
+
+    <input type="text" placeholder="Parent / Guardian Name" required>
+    <input type="tel" placeholder="Contact Number" required>
+
+    <button type="submit">Submit Enrollment</button>
+    <p id="msg"></p>
+</form>
+
+<footer>
+© 2026 Sulop National High School – Senior High School
+</footer>
+
+</div>
+
+<script>
+function submitForm() {
+    document.getElementById("msg").innerHTML =
+    "✅ Enrollment submitted successfully!";
+    document.getElementById("msg").style.color = "green";
+}
+</script>
+
+</body>
+</html>
