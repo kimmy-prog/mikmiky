@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Personal Website</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  min-height: 100vh;
+  color: white;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1501973801540-537f08ccae7b")
+              center / cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#animated-text {
+  font-size: 4rem;
+  letter-spacing: 8px;
+}
+
+#animated-text span {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.caption {
+  padding: 12px;
+  font-size: 1rem;
+  background: rgba(0,0,0,0.4);
+}
+
+/* ABOUT TEXT */
+.about-text {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* CONTACT */
+.contact-box {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255,255,255,0.15);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+}
+
+.contact-box p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="animated-text">Angelo Life</h1>
+  <p class="subtitle">Welcome to My Personal Website</p>
+</header>
+
+<!-- ABOUT ME -->
+<section>
+  <h2>About Me</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://www.facebook.com/b4219a29-1053-4a25-87c5-83a18537af19">
+      <div class="caption">This is me 😊</div>
+    </div>
+  </div>
+  <p class="about-text">
+    Hello! My name is <b>Angelo R. Clavario</b>.  
+    I am a creative and passionate person who loves learning new things, 
+    spending time with my family, and enjoying my hobbies.
+  </p>
+</section>
+
+<!-- FAMILY -->
+<section>
+  <h2>My Family</h2>
+  <div class="grid">
+    <div class="card"><img src="https://via.placeholder.com/400x300"><div class="caption">Family Moment 1</div></div>
+    <div class="card"><img src="https://via.placeholder.com/400x300"><div class="caption">Family Moment 2</div></div>
+    <div class="card"><img src="https://via.placeholder.com/400x300"><div class="caption">Family Moment 3</div></div>
+    <div class="card"><img src="https://via.placeholder.com/400x300"><div class="caption">Family Moment 4</div></div>
+    <div class="card"><img src="https://via.placeholder.com/400x300"><div class="caption">Family Moment 5</div></div>
+    <div class="card"><img src="https://via.placeholder.com/400x300"><div class="caption">Family Moment 6</div></div>
+  </div>
+</section>
+
+<!-- HOBBIES -->
+<section>
+  <h2>My Hobbies</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300">
+      <div class="caption">I enjoy my hobby ✨</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <h2>Contact Me</h2>
+  <div class="contact-box">
+    <p>📧 Email: yourname@email.com</p>
+    <p>📞 Phone: +123 456 7890</p>
+    <p>📍 Location: Your City</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 | My Personal Website
+</footer>
+
+<script>
+const text = document.getElementById("animated-text");
+const letters = text.innerText.split("");
+text.innerText = "";
+
+letters.forEach((letter, index) => {
+  const span = document.createElement("span");
+  span.innerText = letter === " " ? "\u00A0" : letter;
+  span.style.animationDelay = `${index * 0.15}s`;
+  text.appendChild(span);
+});
+</script>
+
+</body>
+</html>
